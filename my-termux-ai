@@ -1,7 +1,7 @@
 import os, requests
 
 API_KEY = os.environ.get("AQ.Ab8RN6JbswdfPeMP2K6UQ05knKYrwUm444rZ1QE6UiGW4JJZ6g")
-URL = "https://groq.com"
+URL = "https://github.com/inshalzohan63-create/my-termux-ai.git"
 
 while True:
     prompt = input("\nYou: ")
