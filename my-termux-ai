@@ -1,0 +1,21 @@
+import os, requests
+
+API_KEY = os.environ.get("AQ.Ab8RN6JbswdfPeMP2K6UQ05knKYrwUm444rZ1QE6UiGW4JJZ6g")
+URL = "https://groq.com"
+
+while True:
+    prompt = input("\nYou: ")
+    if prompt.lower() in ["exit", "quit"]:
+        break
+    res = requests.post(
+        URL,
+        headers={"Authorization": f"Bearer {API_KEY}"},
+        json={
+            "model": "llama-3.3-70b-versatile",
+            "messages": [
+                {"role": "system", "content": "You are my personal Termux AI."},
+                {"role": "user", "content": prompt}
+            ]
+        }
+    ).json()
+    print("AI:", res["choices"][0]["message"]["content"])
